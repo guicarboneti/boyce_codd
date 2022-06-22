@@ -1,0 +1,1167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+CAUTION: Do not modify this file unless you know what you are doing.
+         Unexpected results may occur if the code is changed deliberately.
+-->
+<dbmodel pgmodeler-ver="0.9.2" last-position="0,0" last-zoom="0.7" max-obj-count="39"
+	 default-owner="postgres"
+	 layers="Default layer" active-layers="0">
+<database name="postgres" encoding="UTF8" lc-collate="en_US.UTF-8" lc-ctype="en_US.UTF-8" is-template="false" allow-conns="true">
+	<role name="postgres"/>
+	<tablespace name="pg_default"/>
+	<comment><![CDATA[default administrative connection database]]></comment>
+</database>
+
+<schema name="public" layer="0" rect-visible="true" fill-color="#e1e1e1" sql-disabled="true">
+</schema>
+
+<table name="accesstoken" layer="0" collapse-mode="1" max-obj-count="6">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="40" y="100"/>
+	<column name="id" not-null="true">
+		<type name="text" length="0"/>
+	</column>
+	<column name="ttl" default-value="1209600">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="scopes">
+		<type name="text" length="0"/>
+	</column>
+	<column name="created">
+		<type name="timestamp with time zone" length="0" with-timezone="true"/>
+	</column>
+	<column name="userid">
+		<type name="integer" length="0"/>
+	</column>
+	<constraint name="accesstoken_pkey" type="pk-constr" table="public.accesstoken">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<sequence name="acl_id_seq" cycle="false" start="1" increment="1" min-value="1" max-value="2147483647" cache="1">
+	<schema name="public"/>
+	<role name="postgres"/>
+</sequence>
+
+<table name="acl" layer="0" collapse-mode="1" pagination="true" attribs-page="0" ext-attribs-page="0" max-obj-count="8">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="840" y="60"/>
+	<column name="model">
+		<type name="text" length="0"/>
+	</column>
+	<column name="property">
+		<type name="text" length="0"/>
+	</column>
+	<column name="accesstype">
+		<type name="text" length="0"/>
+	</column>
+	<column name="permission">
+		<type name="text" length="0"/>
+	</column>
+	<column name="principaltype">
+		<type name="text" length="0"/>
+	</column>
+	<column name="principalid">
+		<type name="text" length="0"/>
+	</column>
+	<column name="id" not-null="true" sequence="public.acl_id_seq">
+		<type name="integer" length="0"/>
+	</column>
+	<constraint name="acl_pkey" type="pk-constr" table="public.acl">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<sequence name="bloco__id_seq" cycle="false" start="1" increment="1" min-value="1" max-value="2147483647" cache="1">
+	<schema name="public"/>
+	<role name="postgres"/>
+</sequence>
+
+<table name="bloco" layer="0" collapse-mode="1" pagination="true" attribs-page="0" ext-attribs-page="0" max-obj-count="9">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="1120" y="40"/>
+	<column name="localizacao" not-null="true">
+		<type name="point" length="0"/>
+	</column>
+	<column name="nome" not-null="true">
+		<type name="text" length="0"/>
+	</column>
+	<column name="codigo" not-null="true">
+		<type name="text" length="0"/>
+	</column>
+	<column name="tamanho" not-null="true" default-value="0">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="_id" not-null="true" sequence="public.bloco__id_seq">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="secretarioid">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="setorcod">
+		<type name="text" length="0"/>
+	</column>
+	<column name="departamentocod">
+		<type name="text" length="0"/>
+	</column>
+	<constraint name="bloco_pkey" type="pk-constr" table="public.bloco">
+		<columns names="codigo" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<sequence name="curso__id_seq" cycle="false" start="1" increment="1" min-value="1" max-value="2147483647" cache="1">
+	<schema name="public"/>
+	<role name="postgres"/>
+</sequence>
+
+<table name="curso" layer="0" collapse-mode="2" max-obj-count="8">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="460" y="120"/>
+	<column name="nome">
+		<type name="text" length="0"/>
+	</column>
+	<column name="codigo" not-null="true">
+		<type name="text" length="0"/>
+	</column>
+	<column name="_id" not-null="true" sequence="public.curso__id_seq">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="localizacao">
+		<type name="point" length="0"/>
+	</column>
+	<column name="secretarioid">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="blococod">
+		<type name="text" length="0"/>
+	</column>
+	<column name="setorcod">
+		<type name="text" length="0"/>
+	</column>
+	<constraint name="curso_pkey" type="pk-constr" table="public.curso">
+		<columns names="codigo" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<sequence name="cursodisciplina_id_seq" cycle="false" start="1" increment="1" min-value="1" max-value="2147483647" cache="1">
+	<schema name="public"/>
+	<role name="postgres"/>
+</sequence>
+
+<table name="cursodisciplina" layer="0" collapse-mode="2" max-obj-count="3">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="1460" y="80"/>
+	<column name="id" not-null="true" sequence="public.cursodisciplina_id_seq">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="cursoid">
+		<type name="text" length="0"/>
+	</column>
+	<column name="disciplinaid">
+		<type name="text" length="0"/>
+	</column>
+	<constraint name="cursodisciplina_pkey" type="pk-constr" table="public.cursodisciplina">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<sequence name="cursoturma_id_seq" cycle="false" start="1" increment="1" min-value="1" max-value="2147483647" cache="1">
+	<schema name="public"/>
+	<role name="postgres"/>
+</sequence>
+
+<table name="cursoturma" layer="0" collapse-mode="1" max-obj-count="3">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="20" y="300"/>
+	<column name="id" not-null="true" sequence="public.cursoturma_id_seq">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="cursoid">
+		<type name="text" length="0"/>
+	</column>
+	<column name="turmaid">
+		<type name="integer" length="0"/>
+	</column>
+	<constraint name="cursoturma_pkey" type="pk-constr" table="public.cursoturma">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<sequence name="departamento__id_seq" cycle="false" start="1" increment="1" min-value="1" max-value="2147483647" cache="1">
+	<schema name="public"/>
+	<role name="postgres"/>
+</sequence>
+
+<table name="departamento" layer="0" collapse-mode="1" max-obj-count="7">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="300" y="440"/>
+	<column name="nome" not-null="true">
+		<type name="text" length="0"/>
+	</column>
+	<column name="codigo" not-null="true">
+		<type name="text" length="0"/>
+	</column>
+	<column name="_id" not-null="true" sequence="public.departamento__id_seq">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="localizacao">
+		<type name="point" length="0"/>
+	</column>
+	<column name="secretarioid">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="setorcod">
+		<type name="text" length="0"/>
+	</column>
+	<constraint name="departamento_pkey" type="pk-constr" table="public.departamento">
+		<columns names="codigo" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<sequence name="disciplina__id_seq" cycle="false" start="1" increment="1" min-value="1" max-value="2147483647" cache="1">
+	<schema name="public"/>
+	<role name="postgres"/>
+</sequence>
+
+<table name="disciplina" layer="0" collapse-mode="1" max-obj-count="10">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="740" y="340"/>
+	<column name="codigo" not-null="true">
+		<type name="text" length="0"/>
+	</column>
+	<column name="nome">
+		<type name="text" length="0"/>
+	</column>
+	<column name="equivalenced" default-value="false">
+		<type name="boolean" length="0"/>
+	</column>
+	<column name="carga_horaria" not-null="true" default-value="0">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="duracao" not-null="true" default-value="'semestral'">
+		<type name="text" length="0"/>
+	</column>
+	<column name="modalidade" default-value="'presencial'">
+		<type name="text" length="0"/>
+	</column>
+	<column name="_id" not-null="true" sequence="public.disciplina__id_seq">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="tipodesalaid">
+		<type name="text" length="0"/>
+	</column>
+	<column name="departamentocod">
+		<type name="text" length="0"/>
+	</column>
+	<constraint name="disciplina_pkey" type="pk-constr" table="public.disciplina">
+		<columns names="codigo" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<sequence name="disciplinarecursodesala_id_seq" cycle="false" start="1" increment="1" min-value="1" max-value="2147483647" cache="1">
+	<schema name="public"/>
+	<role name="postgres"/>
+</sequence>
+
+<table name="disciplinarecursodesala" layer="0" collapse-mode="1" max-obj-count="3">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="1180" y="300"/>
+	<column name="id" not-null="true" sequence="public.disciplinarecursodesala_id_seq">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="disciplinaid">
+		<type name="text" length="0"/>
+	</column>
+	<column name="recursodesalaid">
+		<type name="integer" length="0"/>
+	</column>
+	<constraint name="disciplinarecursodesala_pkey" type="pk-constr" table="public.disciplinarecursodesala">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<sequence name="ensalamento_id_seq" cycle="false" start="1" increment="1" min-value="1" max-value="2147483647" cache="1">
+	<schema name="public"/>
+	<role name="postgres"/>
+</sequence>
+
+<table name="ensalamento" layer="0" collapse-mode="1" max-obj-count="3">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="1520" y="340"/>
+	<column name="id" not-null="true" sequence="public.ensalamento_id_seq">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="usuarioid">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="ensalamentoid">
+		<type name="integer" length="0"/>
+	</column>
+	<constraint name="ensalamento_pkey" type="pk-constr" table="public.ensalamento">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<sequence name="equivalenciadisciplina_id_seq" cycle="false" start="1" increment="1" min-value="1" max-value="2147483647" cache="1">
+	<schema name="public"/>
+	<role name="postgres"/>
+</sequence>
+
+<table name="equivalenciadisciplina" layer="0" collapse-mode="1" max-obj-count="3">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="40" y="720"/>
+	<column name="id" not-null="true" sequence="public.equivalenciadisciplina_id_seq">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="disciplina1">
+		<type name="text" length="0"/>
+	</column>
+	<column name="disciplina2">
+		<type name="text" length="0"/>
+	</column>
+	<constraint name="equivalenciadisciplina_pkey" type="pk-constr" table="public.equivalenciadisciplina">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<sequence name="evento_id_seq" cycle="false" start="1" increment="1" min-value="1" max-value="2147483647" cache="1">
+	<schema name="public"/>
+	<role name="postgres"/>
+</sequence>
+
+<table name="evento" layer="0" collapse-mode="1" max-obj-count="6">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="340" y="720"/>
+	<column name="organizador">
+		<type name="text" length="0"/>
+	</column>
+	<column name="vagas" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="ano">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="periodo">
+		<type name="text" length="0"/>
+	</column>
+	<column name="id" not-null="true" sequence="public.evento_id_seq">
+		<type name="integer" length="0"/>
+	</column>
+	<constraint name="evento_pkey" type="pk-constr" table="public.evento">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<sequence name="fileupload_id_seq" cycle="false" start="1" increment="1" min-value="1" max-value="2147483647" cache="1">
+	<schema name="public"/>
+	<role name="postgres"/>
+</sequence>
+
+<table name="fileupload" layer="0" collapse-mode="1" max-obj-count="9">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="760" y="660"/>
+	<column name="date" not-null="true">
+		<type name="timestamp with time zone" length="0" with-timezone="true"/>
+	</column>
+	<column name="letive_init" not-null="true">
+		<type name="timestamp with time zone" length="0" with-timezone="true"/>
+	</column>
+	<column name="letive_end" not-null="true">
+		<type name="timestamp with time zone" length="0" with-timezone="true"/>
+	</column>
+	<column name="container_name" not-null="true">
+		<type name="text" length="0"/>
+	</column>
+	<column name="status">
+		<type name="text" length="0"/>
+	</column>
+	<column name="id" not-null="true" sequence="public.fileupload_id_seq">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="fileuploadid">
+		<type name="text" length="0"/>
+	</column>
+	<column name="semestre">
+		<type name="text" length="0"/>
+	</column>
+	<constraint name="fileupload_pkey" type="pk-constr" table="public.fileupload">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<sequence name="fileuploaderror_id_seq" cycle="false" start="1" increment="1" min-value="1" max-value="2147483647" cache="1">
+	<schema name="public"/>
+	<role name="postgres"/>
+</sequence>
+
+<table name="fileuploaderror" layer="0" collapse-mode="1" max-obj-count="4">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="1220" y="660"/>
+	<column name="linha_numero">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="message" not-null="true">
+		<type name="text" length="0"/>
+	</column>
+	<column name="linha" not-null="true">
+		<type name="text" length="0"/>
+	</column>
+	<column name="id" not-null="true" sequence="public.fileuploaderror_id_seq">
+		<type name="integer" length="0"/>
+	</column>
+	<constraint name="fileuploaderror_pkey" type="pk-constr" table="public.fileuploaderror">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<sequence name="fileuploadfileuploaderror_id_seq" cycle="false" start="1" increment="1" min-value="1" max-value="2147483647" cache="1">
+	<schema name="public"/>
+	<role name="postgres"/>
+</sequence>
+
+<table name="fileuploadfileuploaderror" layer="0" collapse-mode="1" max-obj-count="3">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="1580" y="660"/>
+	<column name="id" not-null="true" sequence="public.fileuploadfileuploaderror_id_seq">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="fileuploaderrorid">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="fileuploadid">
+		<type name="integer" length="0"/>
+	</column>
+	<constraint name="fileuploadfileuploaderror_pkey" type="pk-constr" table="public.fileuploadfileuploaderror">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<sequence name="horario_id_seq" cycle="false" start="1" increment="1" min-value="1" max-value="2147483647" cache="1">
+	<schema name="public"/>
+	<role name="postgres"/>
+</sequence>
+
+<table name="horario" layer="0" collapse-mode="2" max-obj-count="18">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="40" y="940"/>
+	<column name="dia" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="horario_inicial" not-null="true">
+		<type name="text" length="0"/>
+	</column>
+	<column name="horario_final" not-null="true">
+		<type name="text" length="0"/>
+	</column>
+	<column name="data">
+		<type name="timestamp with time zone" length="0" with-timezone="true"/>
+	</column>
+	<column name="livre" not-null="true">
+		<type name="boolean" length="0"/>
+	</column>
+	<column name="motivo">
+		<type name="text" length="0"/>
+	</column>
+	<column name="visible" default-value="true">
+		<type name="boolean" length="0"/>
+	</column>
+	<column name="vagas" default-value="0">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="id" not-null="true" sequence="public.horario_id_seq">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="salacode">
+		<type name="text" length="0"/>
+	</column>
+	<column name="mergedcod">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="blococod">
+		<type name="text" length="0"/>
+	</column>
+	<column name="salaid">
+		<type name="text" length="0"/>
+	</column>
+	<column name="ensalamentoid">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="sugestaocode">
+		<type name="text" length="0"/>
+	</column>
+	<constraint name="horario_pkey" type="pk-constr" table="public.horario">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<sequence name="horarioturma_id_seq" cycle="false" start="1" increment="1" min-value="1" max-value="2147483647" cache="1">
+	<schema name="public"/>
+	<role name="postgres"/>
+</sequence>
+
+<table name="horarioturma" layer="0" collapse-mode="2" max-obj-count="3">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="440" y="940"/>
+	<column name="id" not-null="true" sequence="public.horarioturma_id_seq">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="horarioid">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="turmaid">
+		<type name="integer" length="0"/>
+	</column>
+	<constraint name="horarioturma_pkey" type="pk-constr" table="public.horarioturma">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<sequence name="orgao__id_seq" cycle="false" start="1" increment="1" min-value="1" max-value="2147483647" cache="1">
+	<schema name="public"/>
+	<role name="postgres"/>
+</sequence>
+
+<table name="orgao" layer="0" collapse-mode="2" max-obj-count="6">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="800" y="940"/>
+	<column name="nome" not-null="true">
+		<type name="text" length="0"/>
+	</column>
+	<column name="localizacao">
+		<type name="point" length="0"/>
+	</column>
+	<column name="codigo" not-null="true">
+		<type name="text" length="0"/>
+	</column>
+	<column name="_id" not-null="true" sequence="public.orgao__id_seq">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="secretarioid">
+		<type name="integer" length="0"/>
+	</column>
+	<constraint name="orgao_pkey" type="pk-constr" table="public.orgao">
+		<columns names="codigo" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<sequence name="professor__id_seq" cycle="false" start="1" increment="1" min-value="1" max-value="2147483647" cache="1">
+	<schema name="public"/>
+	<role name="postgres"/>
+</sequence>
+
+<table name="professor" layer="0" collapse-mode="2" max-obj-count="7">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="1100" y="940"/>
+	<column name="codigo" not-null="true">
+		<type name="text" length="0"/>
+	</column>
+	<column name="nome" not-null="true">
+		<type name="text" length="0"/>
+	</column>
+	<column name="website">
+		<type name="text" length="0"/>
+	</column>
+	<column name="email">
+		<type name="text" length="0"/>
+	</column>
+	<column name="_id" not-null="true" sequence="public.professor__id_seq">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="departamentocod">
+		<type name="text" length="0"/>
+	</column>
+	<constraint name="professor_pkey" type="pk-constr" table="public.professor">
+		<columns names="codigo" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<sequence name="professorturma_id_seq" cycle="false" start="1" increment="1" min-value="1" max-value="2147483647" cache="1">
+	<schema name="public"/>
+	<role name="postgres"/>
+</sequence>
+
+<table name="professorturma" layer="0" collapse-mode="2" max-obj-count="3">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="1440" y="940"/>
+	<column name="id" not-null="true" sequence="public.professorturma_id_seq">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="professorid">
+		<type name="text" length="0"/>
+	</column>
+	<column name="turmaid">
+		<type name="integer" length="0"/>
+	</column>
+	<constraint name="professorturma_pkey" type="pk-constr" table="public.professorturma">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<sequence name="recursodesala_id_seq" cycle="false" start="1" increment="1" min-value="1" max-value="2147483647" cache="1">
+	<schema name="public"/>
+	<role name="postgres"/>
+</sequence>
+
+<table name="recursodesala" layer="0" collapse-mode="2" max-obj-count="2">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="40" y="1460"/>
+	<column name="descricao" not-null="true">
+		<type name="text" length="0"/>
+	</column>
+	<column name="id" not-null="true" sequence="public.recursodesala_id_seq">
+		<type name="integer" length="0"/>
+	</column>
+	<constraint name="recursodesala_pkey" type="pk-constr" table="public.recursodesala">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<sequence name="reserva_id_seq" cycle="false" start="1" increment="1" min-value="1" max-value="2147483647" cache="1">
+	<schema name="public"/>
+	<role name="postgres"/>
+</sequence>
+
+<table name="reserva" layer="0" collapse-mode="2" max-obj-count="21">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="400" y="1460"/>
+	<column name="repetir" default-value="false">
+		<type name="boolean" length="0"/>
+	</column>
+	<column name="intervalo">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="data">
+		<type name="timestamp with time zone" length="0" with-timezone="true"/>
+	</column>
+	<column name="dias">
+		<type name="text" length="0"/>
+	</column>
+	<column name="horario_inicio" not-null="true">
+		<type name="text" length="0"/>
+	</column>
+	<column name="horario_fim" not-null="true">
+		<type name="text" length="0"/>
+	</column>
+	<column name="motivo">
+		<type name="text" length="0"/>
+	</column>
+	<column name="observacao">
+		<type name="text" length="0"/>
+	</column>
+	<column name="fim_repeticao">
+		<type name="timestamp with time zone" length="0" with-timezone="true"/>
+	</column>
+	<column name="aprovado" default-value="false">
+		<type name="boolean" length="0"/>
+	</column>
+	<column name="organizador">
+		<type name="text" length="0"/>
+	</column>
+	<column name="vagas" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="ano">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="periodo">
+		<type name="text" length="0"/>
+	</column>
+	<column name="id" not-null="true" sequence="public.reserva_id_seq">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="salacod">
+		<type name="text" length="0"/>
+	</column>
+	<column name="blococod">
+		<type name="text" length="0"/>
+	</column>
+	<column name="ownerid">
+		<type name="integer" length="0"/>
+	</column>
+	<constraint name="reserva_pkey" type="pk-constr" table="public.reserva">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<sequence name="reservahorario_id_seq" cycle="false" start="1" increment="1" min-value="1" max-value="2147483647" cache="1">
+	<schema name="public"/>
+	<role name="postgres"/>
+</sequence>
+
+<table name="reservahorario" layer="0" collapse-mode="2" max-obj-count="3">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="800" y="1460"/>
+	<column name="id" not-null="true" sequence="public.reservahorario_id_seq">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="reservaid">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="horarioid">
+		<type name="integer" length="0"/>
+	</column>
+	<constraint name="reservahorario_pkey" type="pk-constr" table="public.reservahorario">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<sequence name="role_id_seq" cycle="false" start="1" increment="1" min-value="1" max-value="2147483647" cache="1">
+	<schema name="public"/>
+	<role name="postgres"/>
+</sequence>
+
+<table name="role" layer="0" collapse-mode="2" max-obj-count="6">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="1160" y="1460"/>
+	<column name="id" not-null="true" sequence="public.role_id_seq">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="name" not-null="true">
+		<type name="text" length="0"/>
+	</column>
+	<column name="description">
+		<type name="text" length="0"/>
+	</column>
+	<column name="created">
+		<type name="timestamp with time zone" length="0" with-timezone="true"/>
+	</column>
+	<column name="modified">
+		<type name="timestamp with time zone" length="0" with-timezone="true"/>
+	</column>
+	<constraint name="role_pkey" type="pk-constr" table="public.role">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<sequence name="rolemapping_id_seq" cycle="false" start="1" increment="1" min-value="1" max-value="2147483647" cache="1">
+	<schema name="public"/>
+	<role name="postgres"/>
+</sequence>
+
+<table name="rolemapping" layer="0" collapse-mode="2" max-obj-count="4">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="1540" y="1460"/>
+	<column name="id" not-null="true" sequence="public.rolemapping_id_seq">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="principaltype">
+		<type name="text" length="0"/>
+	</column>
+	<column name="principalid">
+		<type name="text" length="0"/>
+	</column>
+	<column name="roleid">
+		<type name="integer" length="0"/>
+	</column>
+	<constraint name="rolemapping_pkey" type="pk-constr" table="public.rolemapping">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<sequence name="sala__id_seq" cycle="false" start="1" increment="1" min-value="1" max-value="2147483647" cache="1">
+	<schema name="public"/>
+	<role name="postgres"/>
+</sequence>
+
+<table name="sala" layer="0" collapse-mode="2" max-obj-count="13">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="40" y="1940"/>
+	<column name="nome">
+		<type name="text" length="0"/>
+	</column>
+	<column name="codigo" not-null="true">
+		<type name="text" length="0"/>
+	</column>
+	<column name="localizacao" not-null="true">
+		<type name="point" length="0"/>
+	</column>
+	<column name="andar" default-value="0">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="capacidade" not-null="true" default-value="0">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="restrita" not-null="true" default-value="false">
+		<type name="boolean" length="0"/>
+	</column>
+	<column name="observacao">
+		<type name="text" length="0"/>
+	</column>
+	<column name="_id" not-null="true" sequence="public.sala__id_seq">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="blococod">
+		<type name="text" length="0"/>
+	</column>
+	<column name="tipo">
+		<type name="text" length="0"/>
+	</column>
+	<column name="ownerid">
+		<type name="integer" length="0"/>
+	</column>
+	<constraint name="sala_pkey" type="pk-constr" table="public.sala">
+		<columns names="codigo" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<sequence name="salarecursodesala_id_seq" cycle="false" start="1" increment="1" min-value="1" max-value="2147483647" cache="1">
+	<schema name="public"/>
+	<role name="postgres"/>
+</sequence>
+
+<table name="salarecursodesala" layer="0" collapse-mode="2" max-obj-count="3">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="340" y="1940"/>
+	<column name="id" not-null="true" sequence="public.salarecursodesala_id_seq">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="salaid">
+		<type name="text" length="0"/>
+	</column>
+	<column name="recursodesalaid">
+		<type name="integer" length="0"/>
+	</column>
+	<constraint name="salarecursodesala_pkey" type="pk-constr" table="public.salarecursodesala">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<sequence name="secretario_id_seq" cycle="false" start="1" increment="1" min-value="1" max-value="2147483647" cache="1">
+	<schema name="public"/>
+	<role name="postgres"/>
+</sequence>
+
+<table name="secretario" layer="0" collapse-mode="2" max-obj-count="3">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="740" y="1940"/>
+	<column name="vinculo" not-null="true" default-value="'departamento'">
+		<type name="text" length="0"/>
+	</column>
+	<column name="valor_vinculo" not-null="true">
+		<type name="text" length="0"/>
+	</column>
+	<column name="id" not-null="true" sequence="public.secretario_id_seq">
+		<type name="integer" length="0"/>
+	</column>
+	<constraint name="secretario_pkey" type="pk-constr" table="public.secretario">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="semestre" layer="0" collapse-mode="2" max-obj-count="4">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="1060" y="1940"/>
+	<column name="semestre" not-null="true">
+		<type name="text" length="0"/>
+	</column>
+	<column name="public" default-value="false">
+		<type name="boolean" length="0"/>
+	</column>
+	<column name="status_number" default-value="0">
+		<type name="real" length="0"/>
+	</column>
+	<column name="status_msg">
+		<type name="text" length="0"/>
+	</column>
+	<constraint name="semestre_pkey" type="pk-constr" table="public.semestre">
+		<columns names="semestre" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<sequence name="setor__id_seq" cycle="false" start="1" increment="1" min-value="1" max-value="2147483647" cache="1">
+	<schema name="public"/>
+	<role name="postgres"/>
+</sequence>
+
+<table name="setor" layer="0" collapse-mode="2" max-obj-count="8">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="1400" y="1940"/>
+	<column name="website">
+		<type name="text" length="0"/>
+	</column>
+	<column name="email">
+		<type name="text" length="0"/>
+	</column>
+	<column name="nome" not-null="true">
+		<type name="text" length="0"/>
+	</column>
+	<column name="codigo" not-null="true">
+		<type name="text" length="0"/>
+	</column>
+	<column name="_id" not-null="true" sequence="public.setor__id_seq">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="localizacao">
+		<type name="point" length="0"/>
+	</column>
+	<column name="secretarioid">
+		<type name="integer" length="0"/>
+	</column>
+	<constraint name="setor_pkey" type="pk-constr" table="public.setor">
+		<columns names="codigo" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="tipodesala" layer="0" collapse-mode="2" max-obj-count="1">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="40" y="2300"/>
+	<column name="nome" not-null="true" default-value="'normal'">
+		<type name="text" length="0"/>
+	</column>
+	<constraint name="tipodesala_pkey" type="pk-constr" table="public.tipodesala">
+		<columns names="nome" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<sequence name="turma_id_seq" cycle="false" start="1" increment="1" min-value="1" max-value="2147483647" cache="1">
+	<schema name="public"/>
+	<role name="postgres"/>
+</sequence>
+
+<table name="turma" layer="0" collapse-mode="2" max-obj-count="16">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="380" y="2320"/>
+	<column name="codigo" not-null="true">
+		<type name="text" length="0"/>
+	</column>
+	<column name="data_inicio" not-null="true">
+		<type name="timestamp with time zone" length="0" with-timezone="true"/>
+	</column>
+	<column name="data_fim" not-null="true">
+		<type name="timestamp with time zone" length="0" with-timezone="true"/>
+	</column>
+	<column name="merged" default-value="false">
+		<type name="boolean" length="0"/>
+	</column>
+	<column name="organizador">
+		<type name="text" length="0"/>
+	</column>
+	<column name="vagas" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="ano">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="periodo">
+		<type name="text" length="0"/>
+	</column>
+	<column name="id" not-null="true" sequence="public.turma_id_seq">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="disciplinacod">
+		<type name="text" length="0"/>
+	</column>
+	<column name="mergedcod">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="departamentocod">
+		<type name="text" length="0"/>
+	</column>
+	<column name="semestre">
+		<type name="text" length="0"/>
+	</column>
+	<column name="mergeorder">
+		<type name="integer" length="0"/>
+	</column>
+	<constraint name="turma_pkey" type="pk-constr" table="public.turma">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<sequence name="usuario_id_seq" cycle="false" start="1" increment="1" min-value="1" max-value="2147483647" cache="1">
+	<schema name="public"/>
+	<role name="postgres"/>
+</sequence>
+
+<table name="usuario" layer="0" collapse-mode="2" max-obj-count="12">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="840" y="2300"/>
+	<column name="nome" not-null="true">
+		<type name="text" length="0"/>
+	</column>
+	<column name="restricao" default-value="'change_password'">
+		<type name="text" length="0"/>
+	</column>
+	<column name="realm">
+		<type name="text" length="0"/>
+	</column>
+	<column name="username">
+		<type name="text" length="0"/>
+	</column>
+	<column name="password" not-null="true">
+		<type name="text" length="0"/>
+	</column>
+	<column name="email" not-null="true">
+		<type name="text" length="0"/>
+	</column>
+	<column name="emailverified">
+		<type name="boolean" length="0"/>
+	</column>
+	<column name="verificationtoken">
+		<type name="text" length="0"/>
+	</column>
+	<column name="id" not-null="true" sequence="public.usuario_id_seq">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="secretariocod">
+		<type name="integer" length="0"/>
+	</column>
+	<constraint name="usuario_pkey" type="pk-constr" table="public.usuario">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<index name="codigoidx" table="public.turma"
+	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 index-type="btree" factor="90">
+		<idxelement use-sorting="false">
+			<column name="codigo"/>
+		</idxelement>
+</index>
+
+<index name="deptoidx" table="public.turma"
+	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 index-type="btree" factor="90">
+		<idxelement use-sorting="false">
+			<column name="departamentocod"/>
+		</idxelement>
+</index>
+
+<index name="diahorario_idx" table="public.horario"
+	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 index-type="btree" factor="90">
+		<idxelement use-sorting="false">
+			<column name="dia"/>
+		</idxelement>
+		<idxelement use-sorting="false">
+			<column name="horario_inicial"/>
+		</idxelement>
+		<idxelement use-sorting="false">
+			<column name="horario_final"/>
+		</idxelement>
+</index>
+
+<index name="disciplina_idx" table="public.cursodisciplina"
+	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 index-type="btree" factor="90">
+		<idxelement use-sorting="false">
+			<column name="disciplinaid"/>
+		</idxelement>
+</index>
+
+<index name="discpidx" table="public.turma"
+	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 index-type="btree" factor="90">
+		<idxelement use-sorting="false">
+			<column name="disciplinacod"/>
+		</idxelement>
+</index>
+
+<index name="horario_idx" table="public.turma"
+	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 index-type="btree" factor="90">
+		<idxelement use-sorting="false">
+			<column name="data_inicio"/>
+		</idxelement>
+		<idxelement use-sorting="false">
+			<column name="data_fim"/>
+		</idxelement>
+</index>
+
+<index name="idvisible_idx" table="public.horario"
+	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 index-type="btree" factor="90">
+		<idxelement use-sorting="false">
+			<column name="visible"/>
+		</idxelement>
+		<idxelement use-sorting="false">
+			<column name="id"/>
+		</idxelement>
+</index>
+
+<index name="livre_idx" table="public.horario"
+	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 index-type="btree" factor="90">
+		<idxelement use-sorting="false">
+			<column name="livre"/>
+		</idxelement>
+</index>
+
+<index name="merged_idx" table="public.horario"
+	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 index-type="btree" factor="90">
+		<idxelement use-sorting="false">
+			<column name="mergedcod"/>
+		</idxelement>
+</index>
+
+<index name="rolemapping_principalid_idx" table="public.rolemapping"
+	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 index-type="btree" factor="90">
+		<idxelement use-sorting="false">
+			<column name="principalid"/>
+		</idxelement>
+</index>
+
+<index name="sala_idx" table="public.horario"
+	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 index-type="btree" factor="90">
+		<idxelement use-sorting="false">
+			<column name="salaid"/>
+		</idxelement>
+</index>
+
+<index name="turmaid" table="public.horarioturma"
+	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 index-type="btree" factor="90">
+		<idxelement use-sorting="false">
+			<column name="turmaid"/>
+		</idxelement>
+		<idxelement use-sorting="false">
+			<column name="horarioid"/>
+		</idxelement>
+</index>
+
+<permission>
+	<object name="public" type="schema"/>
+	<roles names="postgres"/>
+	<privileges create="true" usage="true"/>
+</permission>
+<permission>
+	<object name="public" type="schema"/>
+	<privileges create="true" usage="true"/>
+</permission>
+</dbmodel>
