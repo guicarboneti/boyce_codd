@@ -18,7 +18,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 <table name="accesstoken" layer="0" collapse-mode="1" max-obj-count="6">
 	<schema name="public"/>
 	<role name="postgres"/>
-	<position x="40" y="100"/>
+	<position x="100" y="80"/>
 	<column name="id" not-null="true">
 		<type name="text" length="0"/>
 	</column>
@@ -47,7 +47,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 <table name="acl" layer="0" collapse-mode="1" pagination="true" attribs-page="0" ext-attribs-page="0" max-obj-count="8">
 	<schema name="public"/>
 	<role name="postgres"/>
-	<position x="840" y="60"/>
+	<position x="820" y="40"/>
 	<column name="model">
 		<type name="text" length="0"/>
 	</column>
@@ -82,7 +82,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 <table name="bloco" layer="0" collapse-mode="1" pagination="true" attribs-page="0" ext-attribs-page="0" max-obj-count="9">
 	<schema name="public"/>
 	<role name="postgres"/>
-	<position x="1120" y="40"/>
+	<position x="1100" y="20"/>
 	<column name="localizacao" not-null="true">
 		<type name="point" length="0"/>
 	</column>
@@ -120,7 +120,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 <table name="curso" layer="0" collapse-mode="2" max-obj-count="8">
 	<schema name="public"/>
 	<role name="postgres"/>
-	<position x="460" y="120"/>
+	<position x="440" y="100"/>
 	<column name="nome">
 		<type name="text" length="0"/>
 	</column>
@@ -152,10 +152,10 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	<role name="postgres"/>
 </sequence>
 
-<table name="cursodisciplina" layer="0" collapse-mode="2" max-obj-count="3">
+<table name="cursodisciplina" layer="0" collapse-mode="2" max-obj-count="6">
 	<schema name="public"/>
 	<role name="postgres"/>
-	<position x="1460" y="80"/>
+	<position x="340" y="400"/>
 	<column name="id" not-null="true" sequence="public.cursodisciplina_id_seq">
 		<type name="integer" length="0"/>
 	</column>
@@ -178,7 +178,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 <table name="cursoturma" layer="0" collapse-mode="1" max-obj-count="3">
 	<schema name="public"/>
 	<role name="postgres"/>
-	<position x="20" y="300"/>
+	<position x="100" y="280"/>
 	<column name="id" not-null="true" sequence="public.cursoturma_id_seq">
 		<type name="integer" length="0"/>
 	</column>
@@ -201,7 +201,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 <table name="departamento" layer="0" collapse-mode="1" max-obj-count="7">
 	<schema name="public"/>
 	<role name="postgres"/>
-	<position x="300" y="440"/>
+	<position x="1500" y="100"/>
 	<column name="nome" not-null="true">
 		<type name="text" length="0"/>
 	</column>
@@ -233,7 +233,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 <table name="disciplina" layer="0" collapse-mode="1" max-obj-count="10">
 	<schema name="public"/>
 	<role name="postgres"/>
-	<position x="740" y="340"/>
+	<position x="820" y="300"/>
 	<column name="codigo" not-null="true">
 		<type name="text" length="0"/>
 	</column>
@@ -274,7 +274,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 <table name="disciplinarecursodesala" layer="0" collapse-mode="1" max-obj-count="3">
 	<schema name="public"/>
 	<role name="postgres"/>
-	<position x="1180" y="300"/>
+	<position x="1160" y="280"/>
 	<column name="id" not-null="true" sequence="public.disciplinarecursodesala_id_seq">
 		<type name="integer" length="0"/>
 	</column>
@@ -297,7 +297,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 <table name="ensalamento" layer="0" collapse-mode="1" max-obj-count="3">
 	<schema name="public"/>
 	<role name="postgres"/>
-	<position x="1520" y="340"/>
+	<position x="1500" y="320"/>
 	<column name="id" not-null="true" sequence="public.ensalamento_id_seq">
 		<type name="integer" length="0"/>
 	</column>
@@ -320,7 +320,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 <table name="equivalenciadisciplina" layer="0" collapse-mode="1" max-obj-count="3">
 	<schema name="public"/>
 	<role name="postgres"/>
-	<position x="40" y="720"/>
+	<position x="100" y="700"/>
 	<column name="id" not-null="true" sequence="public.equivalenciadisciplina_id_seq">
 		<type name="integer" length="0"/>
 	</column>
@@ -343,7 +343,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 <table name="evento" layer="0" collapse-mode="1" max-obj-count="6">
 	<schema name="public"/>
 	<role name="postgres"/>
-	<position x="340" y="720"/>
+	<position x="320" y="700"/>
 	<column name="organizador">
 		<type name="text" length="0"/>
 	</column>
@@ -372,7 +372,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 <table name="fileupload" layer="0" collapse-mode="1" max-obj-count="9">
 	<schema name="public"/>
 	<role name="postgres"/>
-	<position x="760" y="660"/>
+	<position x="740" y="640"/>
 	<column name="date" not-null="true">
 		<type name="timestamp with time zone" length="0" with-timezone="true"/>
 	</column>
@@ -410,7 +410,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 <table name="fileuploaderror" layer="0" collapse-mode="1" max-obj-count="4">
 	<schema name="public"/>
 	<role name="postgres"/>
-	<position x="1220" y="660"/>
+	<position x="1200" y="640"/>
 	<column name="linha_numero">
 		<type name="integer" length="0"/>
 	</column>
@@ -436,7 +436,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 <table name="fileuploadfileuploaderror" layer="0" collapse-mode="1" max-obj-count="3">
 	<schema name="public"/>
 	<role name="postgres"/>
-	<position x="1580" y="660"/>
+	<position x="1560" y="640"/>
 	<column name="id" not-null="true" sequence="public.fileuploadfileuploaderror_id_seq">
 		<type name="integer" length="0"/>
 	</column>
@@ -459,7 +459,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 <table name="horario" layer="0" collapse-mode="2" max-obj-count="18">
 	<schema name="public"/>
 	<role name="postgres"/>
-	<position x="40" y="940"/>
+	<position x="100" y="920"/>
 	<column name="dia" not-null="true">
 		<type name="integer" length="0"/>
 	</column>
@@ -518,7 +518,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 <table name="horarioturma" layer="0" collapse-mode="2" max-obj-count="3">
 	<schema name="public"/>
 	<role name="postgres"/>
-	<position x="440" y="940"/>
+	<position x="420" y="920"/>
 	<column name="id" not-null="true" sequence="public.horarioturma_id_seq">
 		<type name="integer" length="0"/>
 	</column>
@@ -541,7 +541,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 <table name="orgao" layer="0" collapse-mode="2" max-obj-count="6">
 	<schema name="public"/>
 	<role name="postgres"/>
-	<position x="800" y="940"/>
+	<position x="780" y="920"/>
 	<column name="nome" not-null="true">
 		<type name="text" length="0"/>
 	</column>
@@ -570,7 +570,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 <table name="professor" layer="0" collapse-mode="2" max-obj-count="7">
 	<schema name="public"/>
 	<role name="postgres"/>
-	<position x="1100" y="940"/>
+	<position x="1080" y="920"/>
 	<column name="codigo" not-null="true">
 		<type name="text" length="0"/>
 	</column>
@@ -602,7 +602,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 <table name="professorturma" layer="0" collapse-mode="2" max-obj-count="3">
 	<schema name="public"/>
 	<role name="postgres"/>
-	<position x="1440" y="940"/>
+	<position x="1420" y="920"/>
 	<column name="id" not-null="true" sequence="public.professorturma_id_seq">
 		<type name="integer" length="0"/>
 	</column>
@@ -625,7 +625,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 <table name="recursodesala" layer="0" collapse-mode="2" max-obj-count="2">
 	<schema name="public"/>
 	<role name="postgres"/>
-	<position x="40" y="1460"/>
+	<position x="100" y="1440"/>
 	<column name="descricao" not-null="true">
 		<type name="text" length="0"/>
 	</column>
@@ -645,7 +645,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 <table name="reserva" layer="0" collapse-mode="2" max-obj-count="21">
 	<schema name="public"/>
 	<role name="postgres"/>
-	<position x="400" y="1460"/>
+	<position x="380" y="1440"/>
 	<column name="repetir" default-value="false">
 		<type name="boolean" length="0"/>
 	</column>
@@ -713,7 +713,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 <table name="reservahorario" layer="0" collapse-mode="2" max-obj-count="3">
 	<schema name="public"/>
 	<role name="postgres"/>
-	<position x="800" y="1460"/>
+	<position x="780" y="1440"/>
 	<column name="id" not-null="true" sequence="public.reservahorario_id_seq">
 		<type name="integer" length="0"/>
 	</column>
@@ -736,7 +736,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 <table name="role" layer="0" collapse-mode="2" max-obj-count="6">
 	<schema name="public"/>
 	<role name="postgres"/>
-	<position x="1160" y="1460"/>
+	<position x="1140" y="1440"/>
 	<column name="id" not-null="true" sequence="public.role_id_seq">
 		<type name="integer" length="0"/>
 	</column>
@@ -765,7 +765,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 <table name="rolemapping" layer="0" collapse-mode="2" max-obj-count="4">
 	<schema name="public"/>
 	<role name="postgres"/>
-	<position x="1540" y="1460"/>
+	<position x="1520" y="1440"/>
 	<column name="id" not-null="true" sequence="public.rolemapping_id_seq">
 		<type name="integer" length="0"/>
 	</column>
@@ -791,7 +791,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 <table name="sala" layer="0" collapse-mode="2" max-obj-count="13">
 	<schema name="public"/>
 	<role name="postgres"/>
-	<position x="40" y="1940"/>
+	<position x="100" y="1920"/>
 	<column name="nome">
 		<type name="text" length="0"/>
 	</column>
@@ -838,7 +838,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 <table name="salarecursodesala" layer="0" collapse-mode="2" max-obj-count="3">
 	<schema name="public"/>
 	<role name="postgres"/>
-	<position x="340" y="1940"/>
+	<position x="320" y="1920"/>
 	<column name="id" not-null="true" sequence="public.salarecursodesala_id_seq">
 		<type name="integer" length="0"/>
 	</column>
@@ -861,7 +861,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 <table name="secretario" layer="0" collapse-mode="2" max-obj-count="3">
 	<schema name="public"/>
 	<role name="postgres"/>
-	<position x="740" y="1940"/>
+	<position x="720" y="1920"/>
 	<column name="vinculo" not-null="true" default-value="'departamento'">
 		<type name="text" length="0"/>
 	</column>
@@ -879,7 +879,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 <table name="semestre" layer="0" collapse-mode="2" max-obj-count="4">
 	<schema name="public"/>
 	<role name="postgres"/>
-	<position x="1060" y="1940"/>
+	<position x="1040" y="1920"/>
 	<column name="semestre" not-null="true">
 		<type name="text" length="0"/>
 	</column>
@@ -905,7 +905,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 <table name="setor" layer="0" collapse-mode="2" max-obj-count="8">
 	<schema name="public"/>
 	<role name="postgres"/>
-	<position x="1400" y="1940"/>
+	<position x="1380" y="1920"/>
 	<column name="website">
 		<type name="text" length="0"/>
 	</column>
@@ -935,7 +935,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 <table name="tipodesala" layer="0" collapse-mode="2" max-obj-count="1">
 	<schema name="public"/>
 	<role name="postgres"/>
-	<position x="40" y="2300"/>
+	<position x="100" y="2280"/>
 	<column name="nome" not-null="true" default-value="'normal'">
 		<type name="text" length="0"/>
 	</column>
@@ -952,7 +952,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 <table name="turma" layer="0" collapse-mode="2" max-obj-count="16">
 	<schema name="public"/>
 	<role name="postgres"/>
-	<position x="380" y="2320"/>
+	<position x="360" y="2300"/>
 	<column name="codigo" not-null="true">
 		<type name="text" length="0"/>
 	</column>
@@ -1008,7 +1008,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 <table name="usuario" layer="0" collapse-mode="2" max-obj-count="12">
 	<schema name="public"/>
 	<role name="postgres"/>
-	<position x="840" y="2300"/>
+	<position x="820" y="2280"/>
 	<column name="nome" not-null="true">
 		<type name="text" length="0"/>
 	</column>
@@ -1154,6 +1154,28 @@ CAUTION: Do not modify this file unless you know what you are doing.
 			<column name="horarioid"/>
 		</idxelement>
 </index>
+
+<relationship name="curso_has_many_cursodisciplina" type="rel1n" layer="0"
+	 src-col-pattern="{sc}_{st}"
+	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
+	 src-fk-pattern="{st}_fk"
+	 custom-color="#8f0c94"
+	 src-table="public.curso"
+	 dst-table="public.cursodisciplina"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="disciplina_has_many_cursodisciplina" type="rel1n" layer="0"
+	 src-col-pattern="{sc}_{st}"
+	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
+	 src-fk-pattern="{st}_fk"
+	 custom-color="#dbd9ba"
+	 src-table="public.disciplina"
+	 dst-table="public.cursodisciplina"
+	 src-required="false" dst-required="false">
+	<label ref-type="name-label">
+		<position x="103.05" y="61.3605"/>
+	</label>
+</relationship>
 
 <permission>
 	<object name="public" type="schema"/>
