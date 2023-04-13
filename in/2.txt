@@ -1,2 +1,0 @@
-gestorConta->balcao
-cliente,balcao->gestorConta
