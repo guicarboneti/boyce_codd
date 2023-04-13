@@ -1,0 +1,3 @@
+SSN->sName,address,GPA
+HScode->HSname,HScity
+GPA->priority
