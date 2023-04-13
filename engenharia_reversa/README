@@ -1,0 +1,14 @@
+Foi implementado o algoritmo do boyce codd com o objetivo de ler as dependências funcionais geradas pelo algoritmo TANE do pacote Metanome a partir de uma tabela csv que representa um banco. O algoritmo implementado lê as DFs e retorna um conjunto de relações que respeitam a forma normal boyce codd.
+
+Para executar o algoritmo, use o seguinte comando:
+> python boyce_codd.py <fds.txt>
+onde <fds.txt> é o arquivo que armazena as DFs
+
+As DFs devem ser armazenadas no arquivo no seguinte formato:
+    B,D->A
+    A,E->B,D
+    A,C->B,D
+    C,D,E->A,B
+    E->A,D
+
+Após a execução do Boyce Codd é possível traduzir a saída caso os atributos tenham sido codificados. Para isso use o arquivo convertBCoutput.py, alterando as especificações de tradução no código para reproduzir o seu caso.
